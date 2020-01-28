@@ -1,3 +1,2 @@
-# Index
+# Firebase Authenticationハンズオン
 
-![logo](/images/logo.png)
