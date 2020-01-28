@@ -1,3 +1,10 @@
-# Index
+# Firebase Authenticationハンズオン
 
-![logo](/images/logo.png)
+## 今日のゴール
+
+- aaaaaa
+
+
+## メモ
+
+- 座学的な話もどこかに入れる
