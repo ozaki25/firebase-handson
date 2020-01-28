@@ -1,4 +1,4 @@
-# Vuepress Template
+# Firebase Handson
 
 ## 使い方
 
@@ -15,7 +15,7 @@ vuepress -V
 ### 雛形のクローン
 
 ```bash
-git clone https://github.com/ozaki25/vuepress_template.git
+git clone https://github.com/ozaki25/firebase-handson.git
 cd vuepress_template
 ```
 
