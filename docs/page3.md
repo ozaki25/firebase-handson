@@ -51,7 +51,7 @@ export default App;
 
 ![private window](/images/3/3-1.png)
 
-- うまくいっていればログインごWelcomeが表示されます
+- うまくいっていればログイン後Welcomeが表示されます
 
 ![login](/images/3/3-2.gif)
 
@@ -98,9 +98,9 @@ function App() {
 export default App;
 ```
 
-- SignOutボタンを推すとログアウトできるようになりました
+- SignOutボタンを押すとログアウトできるようになりました
 
-![logout](/images/3/3-2.gif)
+![logout](/images/3/3-3.gif)
 
 - ログインの時と同様で`setUser`によって`user`が更新されると、画面の再評価が走りログイン画面に書き換えられるという動きをしています
 
