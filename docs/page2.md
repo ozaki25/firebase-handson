@@ -1,8 +1,8 @@
-# ReactでWebアプリを作る
+# 2.ReactでWebアプリ作ってGoogle認証をする
 
 ## ゴール
 
-- ReactとFirebaseでログイン機能を実装する
+- ReactアプリでGoogle認証を実行しユーザ情報を取得できること
 
 ## Reactアプリの雛形作成
 
@@ -92,7 +92,7 @@ npm i firebase react-firebaseui
     - ライブラリが依存するライブラリも含まれるため明示的に追加していないライブラリも入っている
 - 追加したライブラリは`package.json`の`dependencies`の項目に追記される
     - `node_modules`はサイズが大きすぎるのでリポジトリ管理しないのが一般的
-    - `dependencies`に依存ライブラリが書かれているので、それを元にすることで`node_modules`の状態を再現できる
+    - `npm i`を実行すると`dependencies`に記載の情報を元にライブラリのインストールが走るので`node_modules`の状態を容易に再現できる
 
 ```json
   "dependencies": {
@@ -164,8 +164,8 @@ firebase.initializeApp(config);
 ### FirebaseUIの設定を追加
 
 - FirebaseのAuthenticationの機能を使うにあたりFirebaseUIを使います
-    - FirebaseUIを使わず全部自前で実装すると実装がけっこう大変
-- 今回はFirebaseUIをReactで使うためのreact-firebaseuiを使っていきます
+    - FirebaseUIを使わず全部自前で作ろうとすると実装がけっこう大変
+- 今回はFirebaseUIをReactで使うためのreact-firebaseuiを使います
 - `src/App.js`に設定を追加します
 
 ```jsx
@@ -224,3 +224,65 @@ export default App;
 ```
 
 ![sns buttons](/images/2/2-5.png)
+
+## Google認証を許可する設定を追加
+
+- どのSNS認証を利用するのか個別に設定する必要があります
+- FirebaseのWebコンソールに戻ってサイドメニューの「Authentication」から「ログイン方法」タブを選択し「Google」の行をクリックします
+
+![auth menu](/images/2/2-6.png)
+
+- 「有効にする」のトグルボタンを活性化させ「プロジェクトのサポートメール」に自身のGmailアドレスを設定し「保存」して下さい
+
+![google settings](/images/2/2-7.png)
+
+- これでGoogle認証を使うための準備が整いました
+
+## Google連携を試してみる
+
+- ここまでうまくいっていれば以下の動画のような動きをするはずです
+    - 人によってアカウント選択画面はでないかもしれません
+
+![google login](/images/2/2-8.gif)
+
+- ログイン完了後FirebaseのWebコンソールを確認します
+- 「Authentication」から「ユーザ」タブを選択するとログインしたユーザが登録されていることを確認できます
+
+![registered user](/images/2/2-9.png)
+
+- これでGoogleと連携し認証が通るところまで作ることができました
+- ただ、これだけでは何も面白くないのでGoogleからユーザ情報を取得します
+
+## Googleからユーザ情報を取得する
+
+- Google認証に成功するとユーザ情報を受け取ることができます
+- `src/App.js`に処理を追加します
+
+```jsx
+// 省略
+
+function App() {
+  // useEffectは第二引数が[]の場合は画面表示時に一度実行される
+  React.useEffect(() => {
+    // 認証が完了したタイミングでコンソールにユーザ情報を出力している
+    firebase.auth().onAuthStateChanged(user => console.log(user.providerData));
+  }, []);
+
+  return (
+    <div>
+      <h1>Hello</h1>
+      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+    </div>
+  );
+}
+
+export default App;
+```
+
+- コンソールにユーザ情報を出力するように実装したので開発者ツールを開いた状態で実行してみます
+    - 開発者ツールは「F12」もしくは右クリックで「要素の検証」を選択すると開く
+    - 「console」タブを開いておく
+- 以下ように名前やメールアドレスなどが取得できていることを確認できる
+
+![output user info](/images/2/2-10.png)
+
