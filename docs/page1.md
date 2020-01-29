@@ -1,9 +1,9 @@
-# Firebaseのプロジェクトを作る
+# 1.Firebaseのプロジェクトを作る
 
 ## ゴール
 
-- Firebaseのアカウントが作成できている
-- Firebaseのプロジェクトが作成できている
+- Firebaseのアカウントが作成できていること
+- Firebaseのプロジェクトが作成できていること
 
 ## Firebaseのアカウント作成
 
