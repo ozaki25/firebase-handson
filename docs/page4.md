@@ -65,7 +65,7 @@ firebase login
 - 最後にデプロイします
 
 ```sh
-firebase deploy
+firebase deploy --project プロジェクトID
 ```
 
 - `✔  Deploy complete!`が出ればOKです
