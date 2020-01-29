@@ -1,4 +1,4 @@
-# 2.ReactでWebアプリ作ってGoogle認証をする
+# 2.ReactでGoogle認証機能を作る
 
 ## ゴール
 
