@@ -1069,6 +1069,13 @@
   dependencies:
     lodash.debounce "^4.0.8"
 
+"@vuepress/plugin-back-to-top@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-1.5.0.tgz#393cbc392ac7c1718cdbdbcac6375f8079a57912"
+  integrity sha512-CXfZEj0LefJE0u32VsGlszL6nS7k7ba/M6eLIS2V1ZUXsDECwtSxiTp51gMGVG265/hAid35Lk0ZDvv2obQgfg==
+  dependencies:
+    lodash.debounce "^4.0.8"
+
 "@vuepress/plugin-last-updated@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.2.0.tgz#7b34065b793848b0482a222b7a6f1b7df3668cdc"
@@ -8458,6 +8465,11 @@ vuepress-plugin-container@^2.0.2:
   integrity sha512-Df5KoIDMYiFg45GTfFw2hIiLGSsjhms4f3ppl2UIBf5nWMxi2lfifcoo8MooMSfxboxRZjoDccqQfu0fypaKrQ==
   dependencies:
     markdown-it-container "^2.0.0"
+
+vuepress-plugin-seo@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-seo/-/vuepress-plugin-seo-0.1.3.tgz#776cb73e9d364de2e3fcddfe15f21c00b708b2ec"
+  integrity sha512-bPP1j9l4q9emoiFz7US2Zg1vsO62UoqhdLcGFcHbB7fvsgn+CmVXZuG2wR6Ap1PXT4ACYaz2lkUlfr5qU3M4vg==
 
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"
