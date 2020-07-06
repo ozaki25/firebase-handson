@@ -4,6 +4,8 @@ module.exports = {
   title: 'Firebase Handson',
   themeConfig: {
     domain: 'https://firebase-authentication-handson.ozaki25.now.sh',
+    repo: 'ozaki25/firebase-handson',
+    repoLabel: 'GitHub',
     sidebar: ['/page1', '/page2', '/page3', '/page4'],
   },
   markdown: {
